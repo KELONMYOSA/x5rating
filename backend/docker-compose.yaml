@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server
+    container_name: clickhouse
+    volumes:
+      - ./clickhouse/data:/var/lib/clickhouse/
+      - ./clickhouse/log:/val/log/clickhouse-server/
+      - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml
+      - ./clickhouse/users.xml:/etc/clickhouse-server/users.xml
+    environment:
+      - CLICKHOUSE_USER=user
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
+      - CLICKHOUSE_PASSWORD=pass
+    ports:
+      - 9000:9000
+      - 8123:8123
+  python-backend:
+    build: .
+    image: python-backend-image
+    container_name: python-backend
+    ports:
+      - 8000:8000
+    depends_on:
+      - clickhouse
