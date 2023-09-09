@@ -12,7 +12,7 @@
 
 ➠ [Запуск приложения](#technologist-запуск-приложения)
 
-➠ [Скриншот](#bar_chart-скриншот)
+➠ [Скриншоты](#bar_chart-скриншоты)
 
 ## :computer: Технологический стек
 
@@ -67,10 +67,16 @@ CLICKHOUSE_PASSWORD - Пароль Clickhouse
 
 Запуск контейнеров - <code>docker compose up -d</code>
 
-## :bar_chart: Скриншот
+## :bar_chart: Скриншоты
 
 > На данной странице отображаются карточки магазинов с ключевыми характеристиками из отзывов
 
 <p align="center">
   <img src="images/Screenshot_1.png">
+</p>
+
+> Адаптивная верстка для мобильных устройств
+
+<p align="center">
+  <img src="images/Screenshot_2.png">
 </p>
